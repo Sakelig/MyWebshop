@@ -8,10 +8,10 @@ public class Items {
     @Id
     @GeneratedValue(
             strategy = GenerationType.SEQUENCE,
-            generator = "item_id_seq"
+            generator = "items_item_id_seq"
     )
     @SequenceGenerator(
-            name = "item_id_seq",
+            name = "items_item_id_seq",
             allocationSize = 1
     )
     @Column(name = "item_id", nullable = false)

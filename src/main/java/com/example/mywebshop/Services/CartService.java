@@ -1,8 +1,8 @@
 package com.example.mywebshop.Services;
 
 import com.example.mywebshop.Entities.Cart;
-import com.example.mywebshop.Repos.CartRepo;
-import com.example.mywebshop.Repos.ItemsRepo;
+import com.example.mywebshop.Repositories.CartRepo;
+import com.example.mywebshop.Repositories.ItemsRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

@@ -1,4 +1,4 @@
-package com.example.mywebshop.Repos;
+package com.example.mywebshop.Repositories;
 
 import com.example.mywebshop.Entities.Items;
 import org.springframework.data.jpa.repository.JpaRepository;
