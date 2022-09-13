@@ -31,7 +31,6 @@ public class WebshopController {
     @GetMapping("/api/v1/items")
     public List<String> items(){
         List<String> items = Arrays.asList("wow", "1", "2", "3");
-
         return items;
     }
 
