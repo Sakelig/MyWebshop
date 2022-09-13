@@ -1,5 +1,8 @@
 package com.example.mywebshop.Controllers;
 
+import com.example.mywebshop.Entities.Cart;
+import com.example.mywebshop.Services.CartService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -10,6 +13,13 @@ import java.util.List;
 
 @RestController
 public class WebshopController {
+
+    private final CartService cartService;
+
+    @Autowired
+    public WebshopController(CartService cartService) {
+        this.cartService = cartService;
+    }
 
     @GetMapping("/hello")
     public String hello(){
@@ -36,7 +46,10 @@ public class WebshopController {
 
 
     @GetMapping("/api/v1/cart")
-    public
+    public List<Cart> carts(){
+        return cartService.getAllCarts();
+    }
+
 
 
 
