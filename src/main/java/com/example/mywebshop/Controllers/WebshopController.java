@@ -1,12 +1,12 @@
 package com.example.mywebshop.Controllers;
 
 import com.example.mywebshop.Entities.Cart;
+import com.example.mywebshop.Entities.Items;
 import com.example.mywebshop.Services.CartService;
+import com.example.mywebshop.Services.ItemDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -39,9 +39,9 @@ public class WebshopController {
     }
 
     @GetMapping("/api/v1/items")
-    public List<String> items(){
-        List<String> items = Arrays.asList("wow", "1", "2", "3");
-        return items;
+    public List<Items> items(){
+        //List<String> items = Arrays.asList("wow", "1", "2", "3");
+        return cartService.getAllItems();
     }
 
 
@@ -50,6 +50,11 @@ public class WebshopController {
         return cartService.getAllCarts();
     }
 
+
+    @PostMapping("/api/v1/items")
+    public Items addItems(@RequestBody ItemDTO item){
+        return cartService.addItems(item);
+    }
 
 
 
